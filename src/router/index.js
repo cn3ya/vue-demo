@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import GeneratedRouter from "../../generated_src/router";
 
 Vue.use(VueRouter);
 
@@ -18,7 +19,8 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
-  }
+  },
+  ...GeneratedRouter
 ];
 
 const router = new VueRouter({
